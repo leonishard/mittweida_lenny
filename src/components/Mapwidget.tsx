@@ -7,9 +7,11 @@ import L from 'leaflet';
 import 'leaflet-routing-machine';
 import './mapwidget.css';
 import { getRestaurants, getHistoricalPlaces, getLocationById } from '../data/locations';
-import { Restaurant, HistoricalPlace, Location } from '../types/dataTypes';
+
 import { getTourById } from '../data/toursData';
-import WeatherWidget from './WeatherWidget';
+import type {HistoricalPlace, Restaurant} from "../types/dataTypes.ts";
+import WeatherWidget from "./Weatherwidget.tsx";
+
 
 // Props interface for the MapWidget
 interface MapWidgetProps {

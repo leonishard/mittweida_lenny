@@ -3,10 +3,11 @@ import React from 'react';
 import { useState, useRef } from 'react';
 import './FoodTinder.css';
 import { getRestaurants } from '../../data/locations';
-import { Restaurant } from '../../types/dataTypes';
+
 import { useAuth } from "../../components/AuthContext.tsx";
 import axios from 'axios';
-import { useLocation } from 'wouter'; // ADD this import
+import { useLocation } from 'wouter';
+import type {Restaurant} from "../../types/dataTypes.ts"; // ADD this import
 
 interface FoodTinderProps {
     onShowOnMap?: (restaurant: Restaurant) => void;

@@ -1,6 +1,8 @@
-import { Restaurant, HistoricalPlace, Location } from '../../types/dataTypes';
+
 
 // Restaurant data
+import type {HistoricalPlace, Restaurant} from "../types/dataTypes.ts";
+
 export const restaurants: Restaurant[] = [
     {
         id: 1,

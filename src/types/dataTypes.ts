@@ -1,5 +1,5 @@
 // Base interface for common properties
-interface BaseLocation {
+export interface BaseLocation {
     id: number;
     name: string;
     description: string;
@@ -22,16 +22,17 @@ export interface Restaurant extends BaseLocation {
     website?: string; // Optional: website URL
 }
 
-// Historical place interface (for future use)
+// Historical place interface
 export interface HistoricalPlace extends BaseLocation {
     type: 'historical';
-    yearBuilt?: number; // Optional: when it was built
-    historicalPeriod?: string; // Optional: which historical period
-    entryFee?: string; // Optional: admission cost
-    openingHours?: string; // Optional: visiting hours
-    guidedTours?: boolean; // Optional: if guided tours available
-    accessibility?: string; // Optional: accessibility info
+    yearBuilt?: number;
+    historicalPeriod?: string;
+    entryFee?: string;
+    openingHours?: string;
+    guidedTours?: boolean;
+    accessibility?: string;
 }
+
 
 // Union type for all location types
 export type Location = Restaurant | HistoricalPlace;

@@ -4,10 +4,11 @@ import React from 'react';
 import { useState, useRef } from 'react';
 import './HistoryTinder.css';
 import { getHistoricalPlaces } from '../../data/locations';
-import { HistoricalPlace } from '../../types/dataTypes';
+
 import { useAuth } from "../../components/AuthContext.tsx";
 import axios from 'axios';
 import { useLocation } from 'wouter';
+import type {HistoricalPlace} from "../../types/dataTypes.ts";
 
 interface HistoryTinderProps {
     onShowOnMap?: (place: HistoricalPlace) => void;
