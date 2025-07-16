@@ -1,0 +1,769 @@
+/* src/pages/Profile/Profile.css */
+/* Add these styles to your existing Profile.css */
+
+/* Account Summary Section */
+.profile-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.profile-section h3 {
+    color: #1e293b;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.summary-stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.stat-number {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3b82f6;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Preferences Section Background */
+.preferences-tabs {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+}
+
+/* Updated preference items styling */
+.preference-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.preference-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+}
+
+.preference-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-color: #3b82f6;
+}
+
+.preference-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.preference-icon {
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.15);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.preference-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    flex: 1;
+}
+
+.remove-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.remove-button:hover {
+    background: #dc2626;
+    border-color: #dc2626;
+    transform: scale(1.05);
+}
+
+.remove-button:hover .remove-icon {
+    color: #ffffff;
+}
+
+.remove-button:active {
+    transform: scale(0.98);
+}
+
+.remove-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.remove-icon {
+    font-size: 14px;
+    color: #dc2626;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+/* Category titles */
+.category-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+
+}
+
+/* No preferences state */
+.no-preferences {
+    text-align: center;
+    padding: 32px 16px;
+    background: #ffffff;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    margin-top: 16px;
+}
+
+.no-preferences p {
+    font-size: 16px;
+    color: #64748b;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+}
+
+.no-preferences small {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* Loading indicator */
+.loading-indicator {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-style: italic;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Category spacing */
+.preference-category {
+    margin-bottom: 24px;
+}
+
+.preference-category:last-child {
+    margin-bottom: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .profile-section {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+
+    .preferences-tabs {
+        padding: 16px;
+    }
+
+    .summary-stats {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .stat-item {
+        min-width: unset;
+    }
+
+    .preference-card {
+        padding: 14px 16px;
+    }
+
+    .preference-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
+    }
+
+    .preference-name {
+        font-size: 15px;
+    }
+
+    .remove-button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .remove-icon {
+        font-size: 12px;
+    }
+
+    .category-title {
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+}
+
+.profile-container {
+    min-height: calc(100vh - 60px);
+    background: #f5f5f5;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.preference-item{
+    color: black;
+}
+
+.no-preferences{
+    color: black;
+}
+
+.profile-header {
+    background: #f8f9fa;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-name {
+    margin: 0 0 8px 0;
+    color: #000; /* Changed from #333 to black for better contrast */
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.profile-status {
+    margin: 0;
+    color: #444; /* Changed from #666 to darker for better readability */
+    font-size: 1rem;
+}
+
+.profile-content {
+    padding: 32px;
+}
+
+.profile-section {
+    margin-bottom: 32px;
+}
+
+.profile-section:last-child {
+    margin-bottom: 0;
+}
+
+.profile-section h3 {
+    margin: 0 0 20px 0;
+    color: #000; /* Changed from #333 to black for better contrast */
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.info-value {
+    color: #333;
+    font-weight: 600;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.action-button {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 16px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.action-button:hover {
+    background: #f8f9fa;
+    border-color: #ccc;
+}
+
+.action-button.logout-action {
+    color: #d63031;
+    border-color: #fab1a0;
+}
+
+.action-button.logout-action:hover {
+    background: #ffeaea;
+    border-color: #d63031;
+}
+
+/* Add these styles to your existing Profile.css */
+
+/* Updated preference items styling */
+.preference-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.preference-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
+}
+
+.preference-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+.preference-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.preference-icon {
+    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.preference-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1e293b;
+    flex: 1;
+}
+
+.remove-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: indianred;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.remove-button:hover {
+    background: #fef2f2;
+    border-color: #f87171;
+    transform: scale(1.05);
+}
+
+.remove-button:active {
+    transform: scale(0.98);
+}
+
+.remove-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.remove-icon {
+    font-size: 14px;
+    color: #dc2626;
+    font-weight: bold;
+}
+
+/* Category titles */
+.category-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* No preferences state */
+.no-preferences {
+    text-align: center;
+    padding: 32px 16px;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    margin-top: 16px;
+}
+
+.no-preferences p {
+    font-size: 16px;
+    color: #64748b;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+}
+
+.no-preferences small {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* Loading indicator */
+.loading-indicator {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Category spacing */
+.preference-category {
+    margin-bottom: 32px;
+}
+
+.preference-category:last-child {
+    margin-bottom: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .preference-card {
+        padding: 14px 16px;
+    }
+
+    .preference-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
+    }
+
+    .preference-name {
+        font-size: 15px;
+    }
+
+    .remove-button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .remove-icon {
+        font-size: 12px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .preference-card {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        border-color: #475569;
+    }
+
+    .preference-card:hover {
+        border-color: #64748b;
+    }
+
+    .preference-name {
+        color: #f1f5f9;
+    }
+
+    .category-title {
+        color: black;
+    }
+
+    .no-preferences {
+        background: #1e293b;
+        border-color: #475569;
+    }
+
+    .no-preferences p {
+        color: #cbd5e1;
+    }
+
+    .no-preferences small {
+        color: #94a3b8;
+    }
+}
+
+.action-icon {
+    font-size: 1.2rem;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Liked items section */
+.liked-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.liked-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.liked-item:hover {
+    background: #f0f0f0;
+}
+
+.liked-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.liked-item-name {
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.liked-item-date {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.remove-like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.remove-like-button:hover {
+    background: #e0e0e0;
+}
+
+.no-likes {
+    color: #666;
+    text-align: center;
+    padding: 24px 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px dashed #e0e0e0;
+    margin: 0;
+}
+
+.no-likes p {
+    margin: 0 0 8px 0;
+}
+
+.no-likes p:last-child {
+    margin: 0;
+    font-size: 0.9rem;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 20px 16px;
+        min-height: calc(100vh - 55px);
+    }
+
+    .profile-header {
+        padding: 24px 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .profile-avatar {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+
+    .profile-name {
+        font-size: 1.6rem;
+    }
+
+    .profile-content {
+        padding: 24px 20px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .liked-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .remove-like-button {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 16px 12px;
+        min-height: calc(100vh - 50px);
+    }
+
+    .profile-header {
+        padding: 20px 16px;
+    }
+
+    .profile-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .profile-name {
+        font-size: 1.4rem;
+    }
+
+    .profile-content {
+        padding: 20px 16px;
+    }
+
+    .action-button {
+        padding: 14px 16px;
+        font-size: 0.9rem;
+    }
+
+    .liked-item {
+        padding: 10px 12px;
+    }
+
+    .liked-item-name {
+        font-size: 0.95rem;
+    }
+
+    .liked-item-date {
+        font-size: 0.8rem;
+    }
+}

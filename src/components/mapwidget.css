@@ -1,0 +1,571 @@
+/* Mobile Tour Header - Fixed positioning */
+.tour-header-mobile {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px 16px;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tour-title-mobile {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.tour-progress-mobile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.progress-text-mobile {
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748b;
+    min-width: 35px;
+}
+
+.progress-bar-mobile {
+    flex: 1;
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill-mobile {
+    height: 100%;
+    background: #3b82f6;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.clear-tour-btn-mobile {
+    width: 24px;
+    height: 24px;
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.clear-tour-btn-mobile:hover {
+    background: #dc2626;
+    color: white;
+}
+
+/* Regular Markers (non-tour locations) */
+.regular-marker-container {
+    background: transparent !important;
+    border: none !important;
+}
+
+.regular-marker {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+}
+
+.regular-marker-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.regular-marker.food .regular-marker-circle {
+    background: #f59e0b;
+}
+
+.regular-marker.history .regular-marker-circle {
+    background: #3b82f6;
+}
+
+.regular-marker.dimmed .regular-marker-circle {
+    opacity: 0.4;
+    transform: scale(0.8);
+}
+
+/* Tour Markers (larger, numbered) */
+.tour-marker-container {
+    background: transparent !important;
+    border: none !important;
+}
+
+.tour-marker {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.tour-marker-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tour-marker.food .tour-marker-circle {
+    background: #f59e0b;
+}
+
+.tour-marker.history .tour-marker-circle {
+    background: #3b82f6;
+}
+
+.tour-marker.current .tour-marker-circle {
+    background: #dc2626;
+    animation: pulse-marker 2s infinite;
+    transform: scale(1.2);
+}
+
+@keyframes pulse-marker {
+    0%, 100% {
+        box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 8px rgba(220, 38, 38, 0.5);
+    }
+}
+
+.tour-marker-number {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Mobile Current Stop Info - Fixed positioning */
+.current-stop-mobile {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e2e8f0;
+    z-index: 2000 !important;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stop-card-mobile {
+    padding: 16px;
+}
+
+.stop-header-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.stop-type-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.stop-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.stop-dot.food {
+    background: #f59e0b;
+}
+
+.stop-dot.history {
+    background: #3b82f6;
+}
+
+.stop-name-mobile {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.stop-time-mobile {
+    background: #e0e7ff;
+    color: #3730a3;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.stop-description-mobile {
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.route-info-mobile {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    padding: 8px;
+    background: #f8fafc;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.route-info-mobile span {
+    font-size: 10px;
+    color: #64748b;
+}
+
+.stop-navigation-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.nav-btn-mobile {
+    width: 40px;
+    height: 40px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.nav-btn-mobile:hover:not(:disabled) {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+.nav-btn-mobile:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.stop-counter-mobile {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.counter-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.counter-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d1d5db;
+    transition: all 0.2s ease;
+}
+
+.counter-dot.active {
+    background: #3b82f6;
+    transform: scale(1.2);
+}
+
+.counter-dot.completed {
+    background: #10b981;
+}
+
+/* Tour Popup Styles */
+.tour-popup {
+    min-width: 150px;
+    max-width: 200px;
+}
+
+.tour-popup h4 {
+    margin: 0 0 6px 0;
+    color: #1e293b;
+    font-size: 14px;
+}
+
+.tour-popup p {
+    margin: 0 0 6px 0;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+.tour-popup small {
+    color: #9ca3af;
+    font-size: 10px;
+}
+
+/* Hide Leaflet Routing Machine UI */
+.leaflet-routing-container {
+    display: none !important;
+}
+
+.leaflet-routing-line {
+    z-index: 5 !important;
+}
+
+/* Adjust map container for mobile with fixed headers */
+.map-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.map {
+    height: 100% !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+}
+
+/* Add padding to map when tour is active */
+.map-section:has(.tour-header-mobile) .map {
+    padding-top: 80px !important;
+    padding-bottom: 200px !important;
+    box-sizing: border-box;
+}
+
+/* Weather overlay adjustments */
+.weather-overlay {
+    position: absolute;
+    top: 90px;
+    right: 16px;
+    z-index: 1500;
+    opacity: 0.9;
+}
+
+/* Ensure map controls stay visible */
+.leaflet-control-container {
+    z-index: 1000 !important;
+}
+
+.leaflet-control-zoom {
+    margin-top: 90px !important;
+}
+
+/* Popup Styles for MapWidget */
+.location-popup {
+    width: 220px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.popup-image-container {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #f5f5f5;
+}
+
+.popup-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.popup-content {
+    padding: 0 2px;
+}
+
+.popup-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #1a1a1a;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.highlighted-badge {
+    font-size: 12px;
+    background-color: #3b82f6;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: normal;
+}
+
+.popup-buttons {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.popup-btn {
+    flex: 1;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.directions-btn {
+    background-color: #ef4444;
+    color: white;
+}
+
+.directions-btn:hover {
+    background-color: #dc2626;
+}
+
+.read-more-btn {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.read-more-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.popup-btn:active {
+    transform: translateY(1px);
+}
+
+/* Direction markers */
+.direction-marker {
+    position: relative;
+}
+
+.direction-marker-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.direction-marker.start .direction-marker-circle {
+    background-color: #10b981;
+    color: white;
+}
+
+.direction-marker.end .direction-marker-circle {
+    background-color: #ef4444;
+    color: white;
+}
+
+.direction-popup {
+    text-align: center;
+    padding: 8px;
+}
+
+.direction-popup h4 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.direction-popup p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Desktop overrides */
+@media (min-width: 768px) {
+    .tour-header-mobile {
+        padding: 16px 24px;
+    }
+
+    .tour-title-mobile {
+        font-size: 18px;
+    }
+
+    .progress-text-mobile {
+        font-size: 14px;
+        min-width: 80px;
+    }
+
+    .progress-bar-mobile {
+        height: 6px;
+    }
+
+    .current-stop-mobile {
+        padding: 20px 24px;
+    }
+
+    .stop-name-mobile {
+        font-size: 16px;
+    }
+
+    .stop-description-mobile {
+        font-size: 14px;
+    }
+
+    .route-info-mobile span {
+        font-size: 12px;
+    }
+
+    .weather-overlay {
+        top: 100px;
+        right: 24px;
+    }
+
+    .leaflet-control-zoom {
+        margin-top: 100px !important;
+    }
+}
+
+/* Mobile responsiveness for popups */
+@media (max-width: 768px) {
+    .location-popup {
+        width: 200px;
+    }
+
+    .popup-image-container {
+        height: 100px;
+    }
+
+    .popup-title {
+        font-size: 13px;
+    }
+
+    .popup-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+}

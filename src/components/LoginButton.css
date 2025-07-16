@@ -1,0 +1,115 @@
+/* src/components/LoginButton.css */
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+}
+
+.home-login-button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home-login-button:hover {
+    background: #555;
+}
+
+.login-icon {
+    font-size: 1.1rem;
+}
+
+.user-section {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user-name {
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.logout-button:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .home-login-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .user-info {
+        padding: 10px 16px;
+    }
+
+    .user-avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+
+    .user-name {
+        font-size: 0.9rem;
+    }
+
+    .logout-button {
+        font-size: 0.8rem;
+    }
+}
