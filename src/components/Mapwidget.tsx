@@ -39,11 +39,11 @@ function RoutingControl({ tour, currentStop, onRouteFound }) {
         );
 
         // Create routing control
+
         const routingControl = L.Routing.control({
             waypoints: waypoints,
             routeWhileDragging: false,
             addWaypoints: false,
-            draggableWaypoints: false,
             fitSelectedRoutes: true,
             showAlternatives: false,
             lineOptions: {
@@ -53,8 +53,11 @@ function RoutingControl({ tour, currentStop, onRouteFound }) {
                         weight: 4,
                         opacity: 0.8
                     }
-                ]
+                ],
+                extendToWaypoints: false,
+                missingRouteTolerance: 0
             },
+            // @ts-ignore
             createMarker: function(i, waypoint, ) {
                 const stop = tour.stops[i];
                 const isCurrentStop = i === currentStop;
@@ -249,11 +252,12 @@ export default function MapWidget({
             ];
 
             // Create routing control
+
             const routingControl = L.Routing.control({
                 waypoints: waypoints,
                 routeWhileDragging: false,
                 addWaypoints: false,
-                draggableWaypoints: false,
+
                 fitSelectedRoutes: true,
                 showAlternatives: false,
                 lineOptions: {
@@ -263,8 +267,11 @@ export default function MapWidget({
                             weight: 4,
                             opacity: 0.8
                         }
-                    ]
+                    ],
+                    extendToWaypoints: false,
+                    missingRouteTolerance: 0
                 },
+                // @ts-ignore
                 createMarker: function(i, waypoint, ) {
                     if (i === 0) {
                         // Start marker (city center)
