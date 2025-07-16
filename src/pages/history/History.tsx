@@ -9,6 +9,7 @@ import { useAuth } from "../../components/AuthContext.tsx";
 import axios from 'axios';
 import { useLocation } from 'wouter';
 import type {HistoricalPlace} from "../../types/dataTypes.ts";
+import {API_BASE_URL} from "../../config.ts";
 
 interface HistoryTinderProps {
     onShowOnMap?: (place: HistoricalPlace) => void;
@@ -74,7 +75,7 @@ const HistoryTinder = ({ onShowOnMap }: HistoryTinderProps) => {
                 likedAt: new Date().toISOString(),
             };
 
-            axios.post('http://localhost:3001/api/items', dataToSend)
+            axios.post(`${API_BASE_URL}/api/items`, dataToSend)
                 .then((response) => {
                     console.log('✅ SUCCESS: Historical place like posted to backend!', response.data);
                 }).catch((error) => {

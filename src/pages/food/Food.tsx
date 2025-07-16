@@ -7,7 +7,8 @@ import { getRestaurants } from '../../data/locations';
 import { useAuth } from "../../components/AuthContext.tsx";
 import axios from 'axios';
 import { useLocation } from 'wouter';
-import type {Restaurant} from "../../types/dataTypes.ts"; // ADD this import
+import type {Restaurant} from "../../types/dataTypes.ts";
+import {API_BASE_URL} from "../../config.ts"; // ADD this import
 
 interface FoodTinderProps {
     onShowOnMap?: (restaurant: Restaurant) => void;
@@ -110,7 +111,7 @@ const FoodTinder = ({ onShowOnMap }: FoodTinderProps) => {
                             console.log('📤 About to send to backend:', dataToSend);
                             console.log('🔢 ItemId type:', typeof currentRestaurant.id, 'Value:', currentRestaurant.id);
 
-                            axios.post('http://localhost:3001/api/items', dataToSend)
+                            axios.post(`${API_BASE_URL}/api/items`, dataToSend)
 
                                 .then((response) => {
                                     console.log('✅ SUCCESS: Like posted to backend!', response.data);
@@ -213,7 +214,7 @@ const FoodTinder = ({ onShowOnMap }: FoodTinderProps) => {
                                 console.log('📤 About to send to backend:', dataToSend);
                                 console.log('🔢 ItemId type:', typeof currentRestaurant.id, 'Value:', currentRestaurant.id);
 
-                                axios.post('http://localhost:3001/api/items', dataToSend)
+                                axios.post(`${API_BASE_URL}/api/items`, dataToSend)
                                     .then((response) => {
                                         console.log('✅ SUCCESS: Like posted to backend!', response.data);
                                     }).catch((error) => {

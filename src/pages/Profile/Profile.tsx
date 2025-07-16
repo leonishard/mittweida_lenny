@@ -3,6 +3,7 @@ import { useLocation } from 'wouter';
 import './Profile.css';
 import { useAuth } from "../../components/AuthContext.tsx";
 import axios from 'axios';
+import {API_BASE_URL} from "../../config.ts";
 
 const Profile: React.FC = () => {
     const { isLoggedIn, username, logout } = useAuth();
@@ -22,7 +23,7 @@ const Profile: React.FC = () => {
         if (!username) return;
         try {
             setLoading(true);
-            const response = await axios.get(`http://localhost:3001/api/items/${username}`);
+            const response = await axios.get(`${API_BASE_URL}/api/items/${username}`);
             console.log('✅ Loaded from backend:', response.data);
             if (Array.isArray(response.data)) {
                 setBackendLikedItems(response.data);
@@ -73,7 +74,7 @@ const Profile: React.FC = () => {
 
             if (backendItem && backendItem.id) {
                 console.log('📤 Sending DELETE to backend for id:', backendItem.id);
-                const res = await axios.delete(`http://localhost:3001/api/items/${backendItem.id}`);
+                const res = await axios.delete(`${API_BASE_URL}/api/items/${backendItem.id}`);
                 console.log('✅ Backend delete response:', res.data);
 
                 setBackendLikedItems(prev =>
