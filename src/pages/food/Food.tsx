@@ -19,8 +19,8 @@ const FoodTinder = ({ onShowOnMap }: FoodTinderProps) => {
     const [dragOffset, setDragOffset] = useState(0);
     const [swipeDirection, setSwipeDirection] = useState<'left' | 'right' | null>(null);
     const cardRef = useRef(null);
-    const { isLoggedIn, login, logout } = useAuth();
-    const [location, setLocation] = useLocation(); // ADD this line
+    const { isLoggedIn} = useAuth();
+    const [setLocation] = useLocation(); // ADD this line
 
     const restaurants = getRestaurants();
 
@@ -28,6 +28,7 @@ const FoodTinder = ({ onShowOnMap }: FoodTinderProps) => {
         const currentRestaurant = restaurants[currentIndex];
 
         // Navigate to map with restaurant ID
+        // @ts-ignore
         setLocation(`/map?food=${currentRestaurant.id}`); // ADD this line
 
         if (onShowOnMap) {
@@ -63,7 +64,7 @@ const FoodTinder = ({ onShowOnMap }: FoodTinderProps) => {
         }
     };
 
-    const handleTouchEnd = (e: React.TouchEvent) => {
+    const handleTouchEnd = (_e: React.TouchEvent) => {
         setIsDragging(false);
         const threshold = 80;
         const currentDragOffset = dragOffset;

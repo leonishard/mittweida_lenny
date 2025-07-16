@@ -10,7 +10,7 @@ const Login: React.FC = () => {
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const { login } = useAuth();
-    const [location, navigate] = useLocation(); // ✅ Wouter's useLocation returns [location, navigate]
+    const [, navigate] = useLocation(); // ✅ Wouter's useLocation returns [location, navigate]
 
     // Simple hardcoded users - you can expand this easily
     const validUsers = [

@@ -55,7 +55,7 @@ function RoutingControl({ tour, currentStop, onRouteFound }) {
                     }
                 ]
             },
-            createMarker: function(i, waypoint, n) {
+            createMarker: function(i, waypoint, ) {
                 const stop = tour.stops[i];
                 const isCurrentStop = i === currentStop;
 
@@ -167,9 +167,11 @@ export default function MapWidget({
     useEffect(() => {
         if (selectedLocation && mapRef.current) {
             const map = mapRef.current;
+            // @ts-ignore
             map.flyTo(selectedLocation.coordinates, 15, {
                 duration: 1.5
             });
+            // @ts-ignore
             console.log(`Map panning to: ${selectedLocation.name}`);
         } else if (selectedTour && mapRef.current) {
             // When tour starts, fit map to show all tour stops
@@ -263,7 +265,7 @@ export default function MapWidget({
                         }
                     ]
                 },
-                createMarker: function(i, waypoint, n) {
+                createMarker: function(i, waypoint, ) {
                     if (i === 0) {
                         // Start marker (city center)
                         const startIcon = L.divIcon({
@@ -353,6 +355,7 @@ export default function MapWidget({
                 console.log("Restaurant not found in switch:", restaurant.name);
         }
 
+        // @ts-ignore
         return (
             <div className="location-popup">
                 <div className="popup-image-container">
@@ -365,9 +368,7 @@ export default function MapWidget({
                 <div className="popup-content">
                     <h3 className="popup-title">
                         {restaurant.name}
-                        {selectedLocation?.id === restaurant.id && (
-                            <span className="highlighted-badge">📍</span>
-                        )}
+
                     </h3>
                     <div className="popup-buttons">
                         <button
@@ -404,6 +405,7 @@ export default function MapWidget({
                 imageSrc = "";
         }
 
+
         return (
             <div className="location-popup">
                 <div className="popup-image-container">
@@ -416,9 +418,6 @@ export default function MapWidget({
                 <div className="popup-content">
                     <h3 className="popup-title">
                         {place.name}
-                        {selectedLocation?.id === place.id && (
-                            <span className="highlighted-badge">📍</span>
-                        )}
                     </h3>
                     <div className="popup-buttons">
                         <button

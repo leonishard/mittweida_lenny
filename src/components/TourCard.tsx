@@ -24,7 +24,7 @@ const TourCard: React.FC<TourCardProps> = ({
                                                difficulty,
                                                highlights
                                            }) => {
-    const [location, navigate] = useLocation();
+    const [, navigate] = useLocation();
 
     const handleStartTour = () => {
         if (tourId) {

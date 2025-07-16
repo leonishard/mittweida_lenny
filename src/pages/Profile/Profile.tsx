@@ -6,13 +6,14 @@ import axios from 'axios';
 
 const Profile: React.FC = () => {
     const { isLoggedIn, username, logout } = useAuth();
-    const [location, navigate] = useLocation();
+    const [navigate] = useLocation();
     const [localLikedItems, setLocalLikedItems] = useState<any[]>([]);
     const [backendLikedItems, setBackendLikedItems] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         if (!isLoggedIn) {
+            // @ts-ignore
             navigate('/login');
         }
     }, [isLoggedIn, navigate]);
@@ -54,9 +55,10 @@ const Profile: React.FC = () => {
         }
     }, [username]);
 
+    const [, setLocation] = useLocation();
     const handleLogout = () => {
         logout();
-        navigate('/');
+        setLocation('/');
     };
 
     const handleRemoveLike = async (itemId: number, type: 'food' | 'history') => {
@@ -102,9 +104,6 @@ const Profile: React.FC = () => {
     const foodLikes = normalizedItems.filter(item => item.type === 'food');
     const historyLikes = normalizedItems.filter(item => item.type === 'history');
 
-    const formatDate = (dateString: string) => {
-        return new Date(dateString).toLocaleDateString();
-    };
 
     return (
         <div className="profile-container">

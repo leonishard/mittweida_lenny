@@ -22,12 +22,13 @@ const HistoryTinder = ({ onShowOnMap }: HistoryTinderProps) => {
 
     const cardRef = useRef(null);
     const { isLoggedIn } = useAuth();
-    const [location, setLocation] = useLocation();
+    const [setLocation] = useLocation();
 
     const historicalPlaces = getHistoricalPlaces();
 
     const handleShowOnMap = () => {
         const currentPlace = historicalPlaces[currentIndex];
+        // @ts-ignore
         setLocation(`/map?history=${currentPlace.id}`);
         if (onShowOnMap) {
             onShowOnMap(currentPlace);

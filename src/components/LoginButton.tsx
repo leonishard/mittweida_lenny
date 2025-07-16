@@ -6,7 +6,7 @@ import { useAuth } from "./AuthContext.tsx";
 
 const LoginButton: React.FC = () => {
     const { isLoggedIn, username, logout } = useAuth();
-    const [location, navigate] = useLocation(); // ✅ Wouter's useLocation returns [location, navigate]
+    const [, navigate] = useLocation(); // ✅ Wouter's useLocation returns [location, navigate]
 
     const handleLoginClick = () => {
         navigate('/login'); // ✅ Same navigation, just from wouter

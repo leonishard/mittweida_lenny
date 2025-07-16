@@ -190,12 +190,15 @@ export const getHistoricalPlaceById = (id: number): HistoricalPlace | undefined 
     historicalPlaces.find(place => place.id === id);
 
 // Combined data for easy access
+// @ts-ignore
 export const allLocations: Location[] = [...restaurants, ...historicalPlaces];
 
 // Helper functions to filter data
 export const getRestaurants = (): Restaurant[] => restaurants;
 
+
 export const getLocationById = (id: number): Location | undefined =>
+    // @ts-ignore
     allLocations.find(location => location.id === id);
 export const getRestaurantById = (id: number): Restaurant | undefined =>
     restaurants.find(restaurant => restaurant.id === id);
